@@ -12,6 +12,7 @@
 | [`Requirements/main_req/`](Requirements/main_req/) | 正式要件定義書一式（システム概要・各Domain仕様・非機能要件・AI開発規約など）                                           |
 | [`Requirements/implementation-plan.md`](Requirements/implementation-plan.md) | 実装計画書。フェーズ一覧・依存関係・未決事項(CR-070系等)を含む各フェーズの詳細タスクをまとめたもの |
 | [`Requirements/er-diagram.md`](Requirements/er-diagram.md) | ER図。`100-database-design.md`(SPEC-100番)準拠のテーブル構成・制約をMermaidで可視化したもの |
+| [`Requirements/sequence-diagrams.md`](Requirements/sequence-diagrams.md) | シーケンス図。認証・購入決済・カラオケ予約・QRチェックイン・管理運用等の主要フローをMermaidで可視化したもの |
 
 ## 技術スタック
 
