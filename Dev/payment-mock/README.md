@@ -21,9 +21,11 @@ npm install -g pnpm
 
 ## 2. セットアップ
 
-このフォルダ（`payment-mock`）に移動して依存関係をインストールし、開発サーバーを起動します。
+このリポジトリをcloneし、`Dev/payment-mock` フォルダに移動して依存関係をインストール、開発サーバーを起動します。
 
 ```bash
+git clone https://github.com/kashiko2421/off-r39-x-dev.git
+cd off-r39-x-dev/Dev/payment-mock
 pnpm install
 pnpm dev
 ```
