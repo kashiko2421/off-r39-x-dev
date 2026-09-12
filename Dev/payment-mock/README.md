@@ -21,9 +21,11 @@ npm install -g pnpm
 
 ## 2. セットアップ
 
-このフォルダ（`payment-mock`）に移動して依存関係をインストールし、開発サーバーを起動します。
+このリポジトリをcloneし、`Dev/payment-mock` フォルダに移動して依存関係をインストール、開発サーバーを起動します。
 
 ```bash
+git clone https://github.com/kashiko2421/off-r39-x-dev.git
+cd off-r39-x-dev/Dev/payment-mock
 pnpm install
 pnpm dev
 ```
@@ -32,30 +34,30 @@ pnpm dev
 
 ## 3. ページ構成
 
-正式仕様書 [`050-page-screen-specification.md`](./docs/requirements/050-page-screen-specification.md) のURL namespace（`/`, `/entry`, `/karaoke`, `/goods`, `/account`, `/purchase`, `/mypage`）に準拠しています。
+正式仕様書 [`050-page-screen-specification.md`](../../Requirements/main_req/050-page-screen-specification.md) のURL namespace（`/`, `/entry`, `/karaoke`, `/goods`, `/account`, `/purchase`, `/mypage`）に準拠しています。
 
-| URL | 内容 |
-|---|---|
-| `/` | 公開トップページ（開催日時・会場アクセス・注意事項） |
-| `/entry` | 入場チケット一覧 |
-| `/karaoke` | カラオケ予約 Sales Guide（日程一覧） |
-| `/karaoke/schedule/[date]` | 日別スケジュール（1時間単位の空き状況） |
-| `/karaoke/slots/[slotId]` | 枠詳細・カート追加（Hold取得はカート追加時ではなく注文作成時） |
-| `/goods` | グッズ一覧 |
-| `/goods/[goodsId]` | グッズ詳細・数量選択・カート追加 |
-| `/account/login`, `/account/register`, `/account/password-reset`, `/account/password-reset/complete` | ログイン・新規登録・パスワード再設定（すべてモック） |
-| `/cart` | カート確認 |
-| `/checkout/[orderId]/payment-method` 以降 | 決済手段選択 → カード／コンビニ決済 → 完了・失敗 |
-| `/purchase/orders/[orderId]` | 購入状態（Purchase Status。Order全7状態に応じた表示） |
-| `/mypage` | マイページ（入場／カラオケ／グッズ／購入履歴／プロフィールへのハブ） |
-| `/mypage/entry-tickets`, `/mypage/entry-tickets/[ticketId]`, `.../qr` | 入場チケット一覧・詳細・QR表示 |
-| `/mypage/karaoke`, `/mypage/karaoke/[reservationId]`, `.../qr` | カラオケ予約一覧・詳細・QR表示 |
-| `/mypage/goods`, `/mypage/goods/[goodsItemId]` | グッズ引換一覧・詳細（QRなし） |
-| `/mypage/orders`, `/mypage/orders/[orderId]` | 購入履歴・注文詳細 |
-| `/mypage/profile` | プロフィール（表示名変更） |
-| `/staff`, `/staff/check-in`, `/staff/karaoke` | スタッフ向け当日受付（デモ・権限チェックなし・フッターからリンクあり） |
-| `/admin`, `/admin/orders`, `/admin/orders/[orderId]` | 運営者向け簡易管理画面（参照とFull Refundのみ・権限チェックなし） |
-| `/admin/karaoke`, `/admin/karaoke/new`, `/admin/karaoke/[slotId]` | カラオケ予約枠の一覧・一括生成・編集（価格変更／販売停止・再開／削除） |
+| URL                                                                                                  | 内容                                                                   |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `/`                                                                                                  | 公開トップページ（開催日時・会場アクセス・注意事項）                   |
+| `/entry`                                                                                             | 入場チケット一覧                                                       |
+| `/karaoke`                                                                                           | カラオケ予約 Sales Guide（日程一覧）                                   |
+| `/karaoke/schedule/[date]`                                                                           | 日別スケジュール（1時間単位の空き状況）                                |
+| `/karaoke/slots/[slotId]`                                                                            | 枠詳細・カート追加（Hold取得はカート追加時ではなく注文作成時）         |
+| `/goods`                                                                                             | グッズ一覧                                                             |
+| `/goods/[goodsId]`                                                                                   | グッズ詳細・数量選択・カート追加                                       |
+| `/account/login`, `/account/register`, `/account/password-reset`, `/account/password-reset/complete` | ログイン・新規登録・パスワード再設定（すべてモック）                   |
+| `/cart`                                                                                              | カート確認                                                             |
+| `/checkout/[orderId]/payment-method` 以降                                                            | 決済手段選択 → カード／コンビニ決済 → 完了・失敗                       |
+| `/purchase/orders/[orderId]`                                                                         | 購入状態（Purchase Status。Order全7状態に応じた表示）                  |
+| `/mypage`                                                                                            | マイページ（入場／カラオケ／グッズ／購入履歴／プロフィールへのハブ）   |
+| `/mypage/entry-tickets`, `/mypage/entry-tickets/[ticketId]`, `.../qr`                                | 入場チケット一覧・詳細・QR表示                                         |
+| `/mypage/karaoke`, `/mypage/karaoke/[reservationId]`, `.../qr`                                       | カラオケ予約一覧・詳細・QR表示                                         |
+| `/mypage/goods`, `/mypage/goods/[goodsItemId]`                                                       | グッズ引換一覧・詳細（QRなし）                                         |
+| `/mypage/orders`, `/mypage/orders/[orderId]`                                                         | 購入履歴・注文詳細                                                     |
+| `/mypage/profile`                                                                                    | プロフィール（表示名変更）                                             |
+| `/staff`, `/staff/check-in`, `/staff/karaoke`                                                        | スタッフ向け当日受付（デモ・権限チェックなし・フッターからリンクあり） |
+| `/admin`, `/admin/orders`, `/admin/orders/[orderId]`                                                 | 運営者向け簡易管理画面（参照とFull Refundのみ・権限チェックなし）      |
+| `/admin/karaoke`, `/admin/karaoke/new`, `/admin/karaoke/[slotId]`                                    | カラオケ予約枠の一覧・一括生成・編集（価格変更／販売停止・再開／削除） |
 
 ## 4. 状態モデル
 
@@ -153,20 +155,20 @@ pnpm dev
 
 ## 6. 参照した仕様書
 
-このモックのページ構成・状態モデル・注意書き文言は、同梱の [`docs/requirements`](./docs/requirements) 内の正式要求仕様書一式（`C:\Users\masas\work\MyWork\Requirements\main_req` より）と、決済領域の検討メモに基づいています。
+このモックのページ構成・状態モデル・注意書き文言は、リポジトリ内の [`Requirements/main_req`](../../Requirements/main_req) にある正式要求仕様書一式と、[`Requirements`](../../Requirements) 直下の決済領域の検討メモに基づいています。
 
-| ファイル | 内容 |
-|---|---|
-| [`010-system-overview.md`](./docs/requirements/010-system-overview.md) | システム概要仕様。技術スタック（Next.js / Hono / Supabase 等）、Domain構成の根拠 |
-| [`040-user-flows.md`](./docs/requirements/040-user-flows.md) | ユーザーフロー仕様。購入・受付等の一連の操作フローの根拠 |
-| [`050-page-screen-specification.md`](./docs/requirements/050-page-screen-specification.md) | 画面仕様。URL namespace、Order State別UI（PG-XFN-001）の根拠 |
-| [`060-authentication-authorization.md`](./docs/requirements/060-authentication-authorization.md) | 認証認可仕様。パスワード桁数（SEC-AUTH-016）、Continuation Intent（AR-CONT-001/003）の根拠 |
-| [`070-order-payment-specification.md`](./docs/requirements/070-order-payment-specification.md) | Order/Payment仕様。Order 7状態、Checkout Attempt、Refund Recordの根拠 |
-| [`080-ticket-qr-checkin-specification.md`](./docs/requirements/080-ticket-qr-checkin-specification.md) | チケット/QR/Check-in仕様。Entitlement 4状態、Check-in outcome分類の根拠 |
-| [`090-karaoke-reservation-specification.md`](./docs/requirements/090-karaoke-reservation-specification.md) | カラオケ予約仕様。Karaoke Slot 4状態、Hold機構、Check-in windowの根拠 |
-| [`130-admin-staff-specification.md`](./docs/requirements/130-admin-staff-specification.md) | 管理者/スタッフ仕様。Order操作カタログ（参照とFull Refundのみ）の根拠 |
-| [`payment-spec-decision-items.md`](./docs/requirements/payment-spec-decision-items.md) | 決済領域の検討事項・決定事項一覧（DEC-A〜DEC-P） |
-| [`change-requests-spec070.md`](./docs/requirements/change-requests-spec070.md) | 070への変更要求一覧。CR-070-001〜003（status: open）は本モックでも既存決定を優先 |
+| ファイル                                                                                                   | 内容                                                                                       |
+| ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| [`010-system-overview.md`](../../Requirements/main_req/010-system-overview.md)                             | システム概要仕様。技術スタック(Next.js / Hono / Supabase 等)、Domain構成の根拠             |
+| [`040-user-flows.md`](../../Requirements/main_req/040-user-flows.md)                                       | ユーザーフロー仕様。購入・受付等の一連の操作フローの根拠                                   |
+| [`050-page-screen-specification.md`](../../Requirements/main_req/050-page-screen-specification.md)         | 画面仕様。URL namespace、Order State別UI(PG-XFN-001)の根拠                                 |
+| [`060-authentication-authorization.md`](../../Requirements/main_req/060-authentication-authorization.md)   | 認証認可仕様。パスワード桁数(SEC-AUTH-016)、Continuation Intent(AR-CONT-001/003)の根拠     |
+| [`070-order-payment-specification.md`](../../Requirements/main_req/070-order-payment-specification.md)     | Order/Payment仕様。Order 7状態、Checkout Attempt、Refund Recordの根拠                      |
+| [`080-ticket-qr-checkin-specification.md`](../../Requirements/main_req/080-ticket-qr-checkin-specification.md) | チケット/QR/Check-in仕様。Entitlement 4状態、Check-in outcome分類の根拠                |
+| [`090-karaoke-reservation-specification.md`](../../Requirements/main_req/090-karaoke-reservation-specification.md) | カラオケ予約仕様。Karaoke Slot 4状態、Hold機構、Check-in windowの根拠              |
+| [`130-admin-staff-specification.md`](../../Requirements/main_req/130-admin-staff-specification.md)         | 管理者/スタッフ仕様。Order操作カタログ(参照とFull Refundのみ)の根拠                        |
+| [`payment-spec-decision-items.md`](../../Requirements/payment-spec-decision-items.md)                      | 決済領域の検討事項・決定事項一覧(DEC-A〜DEC-P)                                             |
+| [`change-requests-spec070.md`](../../Requirements/change-requests-spec070.md)                              | 070への変更要求一覧。CR-070-001〜003(status: open)は本モックでも既存決定を優先             |
 
 画面上の「PAY-040」「DEC-B-01」「KRK-HLD-001」等の表記は、上記仕様書内の該当項目を指しています。
 
