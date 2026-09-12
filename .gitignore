@@ -1,2 +1,7 @@
 # ---- Logs ----
 *.log
+
+# ---- Dev (unused placeholder files) ----
+/Dev/package.json
+/Dev/pnpm-lock.yaml
+/Dev/node_modules

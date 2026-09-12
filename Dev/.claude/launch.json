@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "payment-mock",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "payment-mock", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}
